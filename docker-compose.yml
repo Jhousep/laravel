@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  soketi:
+    image: quay.io/soketi/soketi:latest-16-alpine
+    container_name: soketi
+    ports:
+      - "6001:6001"
+    environment:
+      SOKETI_DEFAULT_APP_ID: myapp
+      SOKETI_DEFAULT_APP_KEY: appkey123
+      SOKETI_DEFAULT_APP_SECRET: supersecret123
+      SOKETI_METRICS_ENABLED: 'true'
+    restart: always
